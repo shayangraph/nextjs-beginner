@@ -1,22 +1,20 @@
-import Link from "next/link";
-import Head from "next/head";
-import Layout from "@/components/Layout";
+import Head from 'next/head'
+import Layout, { siteTitle } from '../components/layout'
+import utilStyles from '../styles/utils.module.css'
 
 export default function Home() {
   return (
-    <>
+    <Layout home>
       <Head>
-        <title>Homepage</title>
+        <title>{siteTitle}</title>
       </Head>
-      <Layout>
-        <div className="container">
-          <img src="/assets/vercel.svg" alt="vercel" />
-          <br />
-          <p className="title">this is a test</p>
-          <br />
-          <Link href="/route/page">Hello</Link>
-        </div>
-      </Layout>
-    </>
-  );
+      <section className={utilStyles.headingMd}>
+        <p>این پروژه بلاگ برای آموزش است.</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this in{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
+      </section>
+    </Layout>
+  )
 }
