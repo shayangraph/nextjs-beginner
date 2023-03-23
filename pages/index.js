@@ -1,9 +1,16 @@
 import { getSortedPostsData } from "@/lib/posts";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
 
 export default function Home({ allPostsData }) {
+  const router = useRouter();
+  console.log(router.isFallback);
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <Layout home>
       <Head>
