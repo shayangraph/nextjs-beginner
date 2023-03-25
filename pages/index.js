@@ -9,7 +9,7 @@ export default function Home({ allPostsData }) {
   console.log(router.isFallback);
   if (router.isFallback) {
     return <div>Loading...</div>;
-  }
+  } 
 
   return (
     <Layout home>
@@ -43,3 +43,4 @@ export async function getStaticProps() {
     },
   };
 }
+
