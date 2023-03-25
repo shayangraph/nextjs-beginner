@@ -6,7 +6,6 @@ import utilStyles from "../styles/utils.module.css";
 
 export default function Home({ allPostsData }) {
   const router = useRouter();
-  console.log(router.isFallback);
   if (router.isFallback) {
     return <div>Loading...</div>;
   } 
